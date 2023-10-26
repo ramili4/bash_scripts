@@ -6,6 +6,8 @@
 ##  This script is to practice different things ##                                            
 ##   AUTHOR: Ramil Safin                        ##                   
 ##################################################
+
+#Adding some colors to the script
 yellow='\033[0;33m'
 print_color(){
 NC='\e[0m'
@@ -21,11 +23,12 @@ echo -e "${COLOR} $2 ${NC}"
 
 }
 
+# Checking if the service is installed
 check_service_status(){
     read -p "Enter the name of the service: " service_name
     print_color "yellow" "Checking the status of the service..."
     sleep 1
-
+# What to do if the service is not installed
     case $(systemctl is-active "$service_name") in
     active)
         print_color "green" "The service "$service_name" is active";;
